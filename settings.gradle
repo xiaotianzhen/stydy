@@ -1,0 +1,1 @@
+include ':smile', ':inputpasswordview', ':slidemenudemo', ':playerview', ':shopping_car', ':mymusic', ':clock', ':menu', ':loading'

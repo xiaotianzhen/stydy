@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/clock/clock.iml" filepath="$PROJECT_DIR$/clock/clock.iml" />
+      <module fileurl="file://$PROJECT_DIR$/inputpasswordview/inputpasswordview.iml" filepath="$PROJECT_DIR$/inputpasswordview/inputpasswordview.iml" />
+      <module fileurl="file://$PROJECT_DIR$/loading/loading.iml" filepath="$PROJECT_DIR$/loading/loading.iml" />
+      <module fileurl="file://$PROJECT_DIR$/menu/menu.iml" filepath="$PROJECT_DIR$/menu/menu.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mymusic/mymusic.iml" filepath="$PROJECT_DIR$/mymusic/mymusic.iml" />
+      <module fileurl="file://$PROJECT_DIR$/playerview/playerview.iml" filepath="$PROJECT_DIR$/playerview/playerview.iml" />
+      <module fileurl="file://$PROJECT_DIR$/shopping_car/shopping_car.iml" filepath="$PROJECT_DIR$/shopping_car/shopping_car.iml" />
+      <module fileurl="file://$PROJECT_DIR$/slidemenudemo/slidemenudemo.iml" filepath="$PROJECT_DIR$/slidemenudemo/slidemenudemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/smile/smile.iml" filepath="$PROJECT_DIR$/smile/smile.iml" />
+      <module fileurl="file://$PROJECT_DIR$/stydy.iml" filepath="$PROJECT_DIR$/stydy.iml" />
+    </modules>
+  </component>
+</project>

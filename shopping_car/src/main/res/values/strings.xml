@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">shopping_car</string>
+    <string name="shopcart">购物车</string>
+    <string name="clear">清空</string>
+</resources>

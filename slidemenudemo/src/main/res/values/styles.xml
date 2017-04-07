@@ -1,0 +1,45 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
+
+
+    <declare-styleable name="PagerSlidingTabStrip">
+        <!--底部滑动指示器的颜色-->
+        <attr name="pstsIndicatorColor" format="color" />
+        <!--底部用于给指示器滑动的区域的颜色-->
+        <attr name="pstsUnderlineColor" format="color" />
+        <!--分割线的颜色-->
+        <attr name="pstsDividerColor" format="color" />
+        <!--指示器的高度-->
+        <attr name="pstsIndicatorHeight" format="dimension" />
+        <!--底部区域的高度-->
+        <attr name="pstsUnderlineHeight" format="dimension" />
+        <!--分割线与上下的间距-->
+        <attr name="pstsDividerPadding" format="dimension" />
+        <!--每个Tab的左右边距-->
+        <attr name="pstsTabPaddingLeftRight" format="dimension" />
+        <!--选中tab的滚动偏移量-->
+        <attr name="pstsScrollOffset" format="dimension" />
+        <!--每个Tab的背景图，StateListDrawable-->
+        <attr name="pstsTabBackground" format="reference" />
+        <!--是否根据tab均分位置，true的时候均分，默认为false,一般都是使用默认值-->
+        <attr name="pstsShouldExpand" format="boolean" />
+        <!--标题文本是否大写，默认为true-->
+        <attr name="pstsTextAllCaps" format="boolean" />
+    </declare-styleable>
+</resources>
