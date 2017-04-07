@@ -194,6 +194,8 @@ public class MenuCustom extends View {
             @Override
             public void onAnimationUpdate(ValueAnimator valueAnimator) {
 
+
+                Log.i("520it", "menuAnimCount" + "**************************"+menuAnimCount);
                 switch (menuAnimCount) {
 
                     case 1:
@@ -234,8 +236,9 @@ public class MenuCustom extends View {
 
             @Override
             public void onAnimationRepeat(Animator animator) {
+
+                Log.i("520it", "" + "***********  onAnimationRepeat***************");
                 if (from == 1) {
-                    Log.i("520it", "menuAnimCount" + "**************************"+menuAnimCount);
                     menuAnimCount++;
                 } else {
                     menuAnimCount--;
