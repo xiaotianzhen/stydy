@@ -85,6 +85,8 @@ public class LoadingCustomView extends View {
 
         canvas.drawCircle(minoffset+minRadiu,mHeight/2,minRadiu,mPaint);
 
+        canvas.drawCircle(minoffset+3*minRadiu,mHeight/2,minRadiu,mPaint);
+        canvas.drawCircle(minoffset+3*minRadiu,mHeight/2,minRadiu,mPaint);
 
     }
 
