@@ -1,3 +1,3 @@
 # stydy
 
-![image](https://raw.githubusercontent.com/xiaotianzhen/stydy/master/pic/device-inputpasswordview.mp4) 
+![image](https://raw.githubusercontent.com/xiaotianzhen/stydy/master/pic/device-inputpasswordview.gif) 
