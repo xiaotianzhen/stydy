@@ -1,3 +1,3 @@
 # stydy
 
-![image](https://github.com/YourAcountName/ProjectName/blob/master/GIFName.gif ) 
+![image](https://github.com/xiaotianzhen/stydy/menu/src/main/res/mipmap-hdpi ) 
