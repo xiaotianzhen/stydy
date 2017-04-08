@@ -120,10 +120,11 @@ public class ShopCartDialog extends Dialog implements View.OnClickListener,ShopC
 
     @Override
     public void remove(View view, int postion) {
-        showTotalPrice();
+
         if(mShopCart.getShoppingAccount()==0){
             this.dismiss();
         }
+        showTotalPrice();
     }
 
     @Override
