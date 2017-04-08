@@ -1,3 +1,3 @@
 # stydy
 
-![image](https://github.com/xiaotianzhen/stydy/menu/src/main/res/mipmap-hdpi ) 
+![image](https://github.com/xiaotianzhen/stydy/res/mipmap-hdpi) 
