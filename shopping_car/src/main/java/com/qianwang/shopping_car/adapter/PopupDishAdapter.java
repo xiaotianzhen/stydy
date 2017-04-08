@@ -53,36 +53,42 @@ public class PopupDishAdapter extends RecyclerView.Adapter<PopupDishAdapter.View
     public void onBindViewHolder(PopupDishAdapter.ViewHoder holder, final int position) {
 
         final Dish dish=getDishByPosition(position);
-        holder.right_dish_name.setText(dish.getDishName());
-        holder.right_dish_price.setText(dish.getDishPrice()+"");
-        int num=0;
-        num=mShopCart.getShoppingSingleMap().get(dish);
-        holder.right_dish_account.setText(num+"");
 
-        holder.right_dish_add_iv.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        if(dish!=null){
+            holder.right_dish_name.setText(dish.getDishName());
+            holder.right_dish_price.setText(dish.getDishPrice()+"");
 
-                if(mShopCart.addShoppingSingle(dish)){
-                  notifyItemChanged(position);
-                    if(mShopCartImp!=null){
-                        mShopCartImp.add(view,position);
+            int  num=mShopCart.getShoppingSingleMap().get(dish);
+
+            Log.i("520it", "num" + "**************************" +num);
+            holder.right_dish_account.setText(num+"");
+
+            holder.right_dish_add_iv.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+                    if(mShopCart.addShoppingSingle(dish)){
+                        notifyItemChanged(position);
+                        if(mShopCartImp!=null){
+                            mShopCartImp.add(view,position);
+                        }
                     }
                 }
-            }
-        });
-        holder.right_dish_remove_iv.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                   if(mShopCart.subShoppingSingle(dish)){
-                       notifyItemChanged(position);
-                       if (mShopCartImp!=null){
-                           mShopCartImp.remove(view,position);
-                       }
-                   }
-            }
-        });
-
+            });
+            holder.right_dish_remove_iv.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if(mShopCart.subShoppingSingle(dish)){
+                        mDishes.clear();
+                        mDishes.addAll(mShopCart.getShoppingSingleMap().keySet());
+                        itemCount = mShopCart.getDishAccount();
+                        notifyDataSetChanged();
+                        if(mShopCartImp!=null)
+                            mShopCartImp.remove(view,position);
+                    }
+                }
+            });
+        }
     }
 
 
