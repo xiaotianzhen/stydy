@@ -22,6 +22,10 @@ public class LoadingCustomView extends View {
     private int maxRadiu = 50;
     private float movex;
     private ValueAnimator mMinAnimator;
+    private int state = -1;
+    private static int SUCCESS = 1;
+    private static int FAIL = 0;
+    private boolean tag=true;
 
 
     public LoadingCustomView(Context context) {
@@ -90,31 +94,82 @@ public class LoadingCustomView extends View {
         super.onDraw(canvas);
         canvas.translate(0, mHeight / 2);
         int halfWidth = mWidth / 2;
-        Log.i("520it", "movex" + "**************************" + movex);
-        if (Math.abs(movex) < mWidth) {
+
+        if (Math.abs(movex) < halfWidth) {
 
             canvas.drawCircle(Math.abs(movex), 0, minRadiu, mPaint);
         }
 
-        if (Math.abs(movex) > halfWidth / 4) {
+        if (Math.abs(movex) > halfWidth / 4 && Math.abs(movex) < 5 * halfWidth / 4) {
 
             canvas.drawCircle(Math.abs(movex) - halfWidth / 4, 0, minRadiu, mPaint);
         }
-        if (Math.abs(movex) > 2 * halfWidth / 4) {
+        if (Math.abs(movex) > 2 * halfWidth / 4 && Math.abs(movex) < 6 * halfWidth / 4) {
 
             canvas.drawCircle(Math.abs(movex) - 2 * halfWidth / 4, 0, minRadiu, mPaint);
 
         }
-        if (Math.abs(movex) > 3 * halfWidth / 4) {
+        if (Math.abs(movex) > 3 * halfWidth / 4 && Math.abs(movex) < 7 * halfWidth / 4) {
 
             canvas.drawCircle(Math.abs(movex) - 3 * halfWidth / 4, 0, minRadiu, mPaint);
         }
-        if (Math.abs(movex)>halfWidth&&Math.abs(movex)<mWidth) {
-            float radiu=maxRadiu-Math.abs(movex)/mWidth*minRadiu;
-            radiu=(radiu>minRadiu)?radiu:minRadiu;
+
+        if (Math.abs(movex) > 7 * halfWidth / 4) {
+
+            canvas.drawCircle(halfWidth + Math.abs(movex) - 7 * halfWidth / 4, 0, minRadiu, mPaint);
+        }
+        if (Math.abs(movex) > 8 * halfWidth / 4) {
+
+            canvas.drawCircle(halfWidth + Math.abs(movex) - 8 * halfWidth / 4, 0, minRadiu, mPaint);
+        }
+        if (Math.abs(movex) > 9 * halfWidth / 4) {
+
+            canvas.drawCircle(halfWidth + Math.abs(movex) - 9 * halfWidth / 4, 0, minRadiu, mPaint);
+        }
+        if (Math.abs(movex) > 10 * halfWidth / 4) {
+
+            canvas.drawCircle(halfWidth + Math.abs(movex) - 10 * halfWidth / 4, 0, minRadiu, mPaint);
+        }
+        if (Math.abs(movex) > halfWidth && Math.abs(movex) < 7 * halfWidth / 4) {
+
+            float radiu = minRadiu / 2 + Math.abs(movex) * minRadiu / (7 * halfWidth / 4);
+            radiu = (radiu > minRadiu) ? radiu : minRadiu;
             canvas.drawCircle(mWidth / 2, 0, radiu, mPaint);
         }
 
+        if (Math.abs(movex) > 7 * halfWidth / 4 && Math.abs(movex) < (10 * halfWidth / 4)) {
+
+            float radiu = 2 * minRadiu - Math.abs(movex) * minRadiu / (10 * halfWidth / 4);
+            radiu = (radiu > minRadiu) ? radiu : minRadiu;
+            canvas.drawCircle(mWidth / 2, 0, radiu, mPaint);
+        }
+
+        Paint linePaint = new Paint();
+        linePaint.setAntiAlias(true);
+        linePaint.setStrokeWidth(5);
+        linePaint.setColor(Color.WHITE);
+        linePaint.setStyle(Paint.Style.STROKE);
+
+        if (state == 1) {
+
+            if (Math.abs(movex) > halfWidth && Math.abs(movex) == 7 * halfWidth / 4) {
+                canvas.translate(mWidth / 2, 0);
+                canvas.drawCircle(0, 0,  3*minRadiu / 2, mPaint);
+                canvas.drawLine(-maxRadiu / 2,0, 0,maxRadiu / 3,linePaint);
+                canvas.drawLine( 0,maxRadiu / 3,2*maxRadiu/4,-maxRadiu/3,linePaint);
+            }
+        }
+        if (state == 0) {
+
+            if (Math.abs(movex) > halfWidth && Math.abs(movex) == 7 * halfWidth / 4) {
+                Log.i("520it", "" + "************* fail *************");
+                canvas.translate(mWidth / 2, 0);
+                canvas.drawCircle(0, 0,  3*minRadiu / 2, mPaint);
+                canvas.drawLine(-maxRadiu / 3, -maxRadiu / 3, maxRadiu / 3, maxRadiu / 3, linePaint);
+                canvas.drawLine(-maxRadiu / 3, maxRadiu / 3, maxRadiu / 3, -maxRadiu / 3, linePaint);
+
+            }
+        }
 
     }
 
@@ -129,16 +184,41 @@ public class LoadingCustomView extends View {
             @Override
             public void onAnimationUpdate(ValueAnimator valueAnimator) {
 
-                if (Math.abs(movex) < 2 * mWidth) {
-                    movex += 5;
-                    postInvalidate();
+                if (state < 0) {
+                    if (Math.abs(movex) < 2 * mWidth) {
+                        movex += 10;
+                        postInvalidate();
+                    } else {
+                        movex = 0;
+                    }
+                } else {
+                    if(tag){
+                        movex=0;
+                    }
+
+                    int halfWidth = mWidth / 2;
+                    if (Math.abs(movex) < 7 * halfWidth / 4) {
+                        movex += 10;
+                        postInvalidate();
+                    }
+
+                    tag=false;
+
                 }
+
             }
         });
 
         mMinAnimator.start();
     }
 
+    public void success() {
+        state = SUCCESS;
+    }
+
+    public void faile() {
+        state = FAIL;
+    }
 
     /**
      * px转dp
