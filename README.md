@@ -1,3 +1,3 @@
 # stydy
 
-![](http://www.baidu.com/img/bdlogo.gif)  
+![](https://raw.githubusercontent.com/xiaotianzhen/stydy/master/pic/device-inputpasswordview.gif)  
