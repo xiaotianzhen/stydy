@@ -3,5 +3,5 @@
 
 ![gif](https://raw.githubusercontent.com/xiaotianzhen/stydy/master/menu/src/main/res/mipmap-hdpi/ic_launcher.png)
 
- ![](pic/hehe.gif)
+ ![](pic/hello.gif)
 
