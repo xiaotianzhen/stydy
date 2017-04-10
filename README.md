@@ -1,4 +1,4 @@
 # stydy
 
-![](https://raw.githubusercontent.com/xiaotianzhen/stydy/master/pic/device-inputpasswordview.gif)  
+![image](https://raw.githubusercontent.com/xiaotianzhen/stydy/master/pic/device-inputpasswordview.gif)
 
