@@ -1,4 +1,4 @@
 # stydy
 
-![gif](https://raw.githubusercontent.com/xiaotianzhen/stydy/master/pic/device-inputpasswordview.gif)
+![gif](https://raw.githubusercontent.com/xiaotianzhen/stydy/master/menu/src/main/res/mipmap-hdpi/ic_launcher.png)
 
