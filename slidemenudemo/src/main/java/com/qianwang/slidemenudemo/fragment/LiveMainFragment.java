@@ -5,6 +5,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -65,13 +66,7 @@ public class LiveMainFragment extends Fragment {
         mTabStrip.setUnderlineHeight(1);
     }
 
-    @Override
-    public void onCreate(@Nullable final Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
 
-
-
-    }
 
     private void initViewpage() {
         mFragments = new ArrayList<Fragment>();
@@ -84,16 +79,8 @@ public class LiveMainFragment extends Fragment {
         mTitle.add("英雄联盟");
         mTitle.add("王者荣耀");
 
-/*      for(String s:mTitle){
-
-            Bundle bundle=new Bundle();
-            bundle.putString("title",s);
-
-            //要使在对应 title 中，Fragment 显示对应内容，将 title 作为一个 key，利用 Bundle 传入到要显示的 Fragment 中
-            mFragments.add(LiveListFragment.getInstance(bundle));
-        }*/
-
-        mViewPagerAdapter=new ViewPagerAdapter(getFragmentManager(),mTitle,mFragments);
+        //fragment 常用的两种适配器，pagerAdapter,fragmentAdapter
+        mViewPagerAdapter=new ViewPagerAdapter(getFragmentManager(),mTitle);
         viewpager.setAdapter(mViewPagerAdapter);
         viewpager.setCurrentItem(0);
 
